@@ -1,0 +1,12 @@
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\bin\Debug\FreakingChat.exe.config
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\bin\Debug\FreakingChat.exe
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\bin\Debug\FreakingChat.pdb
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.exe
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.pdb
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\bin\Debug\Newtonsoft.Json.dll
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\bin\Debug\Newtonsoft.Json.xml
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.LogonUI.resources
+c:\users\user\documents\visual studio 2015\Projects\FreakingChat\FreakingChat\obj\Debug\FreakingChat.MainUI.resources
