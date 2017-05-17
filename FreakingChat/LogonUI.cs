@@ -3,13 +3,12 @@ using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 using Chat;
+using NotificationIconTemplate;
 
 namespace FreakingChat
 {
     public partial class LogonUI : Form
     {
-        public bool openMenuAbrir = false;
-
         public LogonUI()
         {
             InitializeComponent();
@@ -52,31 +51,6 @@ namespace FreakingChat
             {
                 chat = new ChatManager(txtIP.Text, Int32.Parse(txtPort.Text), txtNick.Text);
                 chat.Connect(txtPass.Text);
-            }
-        }
-
-
-        public void CloseMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(@"Do you really want do leave ??",
-                                @"Atention", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
-                                MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            {
-                MainIcon.Visible = false;
-                Environment.Exit(Environment.ExitCode);
-            }
-        }
-
-        public void showMenuItem_Click(object sender, EventArgs e)
-        {
-            if ((openMenuAbrir == false) && (openDoubleClick == false))
-            {
-                using (var form = new MainUI())
-                {
-                    openMenuAbrir = true;
-                    form.ShowDialog();
-                }
-                openMenuAbrir = false;
             }
         }
     }

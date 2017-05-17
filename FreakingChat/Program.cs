@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using NotificationIconTemplate;
 
 namespace FreakingChat
 {
@@ -10,13 +11,10 @@ namespace FreakingChat
         [STAThread]
         static void Main()
         {
+            SingleInstance();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var logon = new LogonUI())
-            {
-                Application.Run(logon);
-            }
-            Environment.Exit(Environment.ExitCode);
+            Application.Run(new AppContext());
         }
 
         public static void SingleInstance()

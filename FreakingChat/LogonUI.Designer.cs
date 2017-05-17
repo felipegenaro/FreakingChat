@@ -1,6 +1,7 @@
 ﻿using FreakingChat.Properties;
 using System;
 using System.Windows.Forms;
+using NotificationIconTemplate;
 
 
 namespace FreakingChat
@@ -18,6 +19,7 @@ namespace FreakingChat
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -36,47 +38,10 @@ namespace FreakingChat
         /// </summary>
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
-            this.MainIcon = new NotifyIcon(this.components);
-            this.MainIcon.ContextMenuStrip = new ContextMenuStrip();
-            // 
-            // notifyIcon1
-            // 
-            this.MainIcon.Text = "FreakingChat";
-            this.MainIcon.Visible = true;
-            //this.MainIcon.Icon = Resources._trayIcon;
-            this.MainIcon.Icon = MainIcon.Icon;
-            this.MainIcon.DoubleClick += MainIconOnDoubleClick;
-            // 
-            // MenuItem
-            // 
-            var showMenuItem = new ToolStripMenuItem
-            {
-                Text = "Open",
-                Name = "abrirMenuItem",
-            };
-            showMenuItem.Click += showMenuItem_Click;
-            MainIcon.ContextMenuStrip.Items.Add(showMenuItem);
-            MainIcon.ContextMenuStrip.Items.Add(new ToolStripSeparator());
-
-
-            // 
-            // MenuItemSair
-            // 
-            var exitMenuItem = new ToolStripMenuItem
-            {
-                Text = "Exit",
-                Name = "exitMenuItem",
-            };
-            exitMenuItem.Click += CloseMenuItem_Click;
-            MainIcon.ContextMenuStrip.Items.Add(exitMenuItem);
-
-            MainIcon.ContextMenuStrip.Items.Add(new ToolStripSeparator());
-
-            //
-            //
-            //
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogonUI));
+            this.MainIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.btnConect = new System.Windows.Forms.Button();
             this.btnOpenConection = new System.Windows.Forms.Button();
             this.txtNick = new System.Windows.Forms.TextBox();
@@ -88,6 +53,11 @@ namespace FreakingChat
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // btnConect
             // 
@@ -201,6 +171,7 @@ namespace FreakingChat
             this.Controls.Add(this.txtNick);
             this.Controls.Add(this.btnOpenConection);
             this.Controls.Add(this.btnConect);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogonUI";
             this.Text = "Conection";
             this.ResumeLayout(false);
@@ -220,20 +191,8 @@ namespace FreakingChat
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
 
-
-        private void MainIconOnDoubleClick(object sender, EventArgs eventArgs)
-        {
-            if ((openDoubleClick == false) && (openMenuAbrir == false))
-            {
-                using (var form = new MainUI())
-                {
-                    openDoubleClick = true;
-                    form.ShowDialog();
-                }
-                openDoubleClick = false;
-            }
-        }
 
         #region Windows Form Designer generated code
 
