@@ -37,7 +37,7 @@ namespace NotificationIconTemplate
             this.MainIcon.Text = "FreakingChat";
             this.MainIcon.Visible = true;
             this.MainIcon.Icon = Resources.trayIcon;
-            this.MainIcon.DoubleClick += MainIconOnDoubleClick;
+            //this.MainIcon.DoubleClick += MainIconOnDoubleClick;
             // 
             // MenuItem Open
             // 
@@ -67,19 +67,19 @@ namespace NotificationIconTemplate
         //
         // DoubleClick
         //
-        private void MainIconOnDoubleClick(object sender, EventArgs eventArgs)
-        {
-            if (Check == false)
-            {
-                var form = new LogonUI();
-                form.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show(@"Another instance of the program is already open.");
-                return;
-            }
-        }
+        //private void MainIconOnDoubleClick(object sender, EventArgs eventArgs)
+        //{
+        //    if (Check == false)
+        //    {
+        //        var form = new LogonUI();
+        //        form.ShowDialog();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show(@"Another instance of the program is already open.");
+        //        return;
+        //    }
+        //}
 
         #region Windows Form Designer generated code
 

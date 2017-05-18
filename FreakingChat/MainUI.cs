@@ -80,7 +80,7 @@ namespace FreakingChat
             txtMessage.ResetText();
         }
 
-        private void txtClientMessage_KeyDown(object sender, KeyEventArgs e)
+        private void txtMessage_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && ckEnter.Checked)
             {

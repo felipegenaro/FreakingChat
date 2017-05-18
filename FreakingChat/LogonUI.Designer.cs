@@ -67,6 +67,7 @@ namespace FreakingChat
             this.btnConect.TabIndex = 0;
             this.btnConect.Text = "Conect";
             this.btnConect.UseVisualStyleBackColor = true;
+            this.btnConect.Click += new System.EventHandler(this.btnConect_Click);
             // 
             // btnOpenConection
             // 
@@ -174,6 +175,7 @@ namespace FreakingChat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LogonUI";
             this.Text = "Conection";
+            this.Closed += new System.EventHandler(this.LogonUI_Close);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,15 +6,19 @@ namespace NotificationIconTemplate
 {
     public partial class AppContext : ApplicationContext
     {
-        public bool Check = false;
+        private LogonUI log;
+
+        public bool logLog = false;
+        //public bool logUI = true;
+        public bool mainUI = false;
+        public bool close;
         public AppContext()
         {
             InitializeComponent();
 
-            Check = true;
-
             var form = new LogonUI();
             form.ShowDialog();
+            //logUI = true;
         }
 
         public void CloseMenuItem_Click(object sender, EventArgs e)
@@ -30,9 +34,15 @@ namespace NotificationIconTemplate
 
         public void OpenMenuItem_Click(object sender, EventArgs e)
         {
-            if (Check == false)
+            //logUI == false &&
+            if (logLog == false && close == true)
             {
                 var form = new LogonUI();
+                form.ShowDialog();
+            }
+            else if (mainUI == false && logLog == true)
+            {
+                var form = new MainUI();
                 form.ShowDialog();
             }
             else

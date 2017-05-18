@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Net;
 using System.Windows.Forms;
 using Chat;
 using NotificationIconTemplate;
@@ -9,6 +7,9 @@ namespace FreakingChat
 {
     public partial class LogonUI : Form
     {
+        private AppContext app;
+
+        public bool closed = false;
         public LogonUI()
         {
             InitializeComponent();
@@ -28,9 +29,12 @@ namespace FreakingChat
                 server.StartServer();
 
                 MessageBox.Show("Connected to Created Server");
+                ActiveForm.Hide();
+                app.logLog = true;
 
                 MainUI main = new MainUI();
                 main.Show();
+                app.mainUI = true;
             }
             else
             {
@@ -38,10 +42,10 @@ namespace FreakingChat
             }
         }
 
-
-        private void btnClientConnect_Click(object sender, EventArgs e)
+        private void btnConect_Click(object sender, EventArgs e)
         {
             ClientConnect();
+
         }
 
         private ChatManager chat;
@@ -52,6 +56,12 @@ namespace FreakingChat
                 chat = new ChatManager(txtIP.Text, Int32.Parse(txtPort.Text), txtNick.Text);
                 chat.Connect(txtPass.Text);
             }
+        }
+
+        private void LogonUI_Close(object sender, EventArgs e)
+        {
+            closed = true;
+            app.close = true;
         }
     }
 }
